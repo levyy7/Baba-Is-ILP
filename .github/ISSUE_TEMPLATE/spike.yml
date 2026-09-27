@@ -1,35 +1,13 @@
 name: "🔬 Research Spike"
-description: "Timeboxed investigation whose output is knowledge/a decision, not production code."
+description: "Timeboxed investigation. Output is a decision or knowledge, not production code."
 title: "[SPIKE] "
-labels: ["spike", "risk:research"]
+labels: ["type:research"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        A spike is timeboxed and throwaway. It does NOT need to produce clean or reusable code.
-        Its job is to answer a question and reduce a specific risk.
-
   - type: textarea
     id: assumption
     attributes:
       label: Blocking assumption being tested
-      description: What do we currently believe/hope is true? What breaks if it's false?
-      placeholder: "e.g. Popper can induce rule-changing mechanics (X IS Y) within a tractable hypothesis space from <50 examples."
-    validations:
-      required: true
-
-  - type: dropdown
-    id: subsystem
-    attributes:
-      label: Subsystem
-      options:
-        - Perception
-        - Ontology
-        - Reasoner
-        - Planner
-        - Explorer
-        - Orchestrator
-        - Eval
+      placeholder: "e.g. An ASP-based ILP system can induce initiatedAt/terminatedAt clauses for a property fluent from <50 traces."
     validations:
       required: true
 
@@ -37,7 +15,7 @@ body:
     id: timebox
     attributes:
       label: Timebox
-      description: Hard stop for this spike (e.g. "2 days", "by Friday")
+      description: Hard stop (e.g. "2 days", "by Friday")
     validations:
       required: true
 
@@ -52,8 +30,8 @@ body:
   - type: textarea
     id: success
     attributes:
-      label: What does success / failure look like?
-      description: Be concrete enough that "did this spike succeed" isn't a judgment call later.
+      label: Success / failure criteria
+      description: Concrete enough that it isn't a judgment call later.
     validations:
       required: true
 
@@ -61,10 +39,15 @@ body:
     id: fallback
     attributes:
       label: Fallback if this fails
-      description: What's the plan B for the architecture if the assumption is false?
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **After opening:** add one `subsystem:*` label and one `risk:*` label (how much the architecture depends on this being true).
 
   - type: textarea
     id: outcome
     attributes:
       label: Outcome (fill in when closing)
-      description: What was learned. Link to an ADR if this changes an architectural decision.
+      description: What was learned. Link an ADR if this changes a decision.

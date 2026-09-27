@@ -1,34 +1,8 @@
-name: "🛠️ Engineering Task"
-description: "Well-understood work where 'done' can be specified up front."
+name: "🛠️ Task"
+description: "Work where 'done' can be specified up front."
 title: "[TASK] "
-labels: ["risk:engineering"]
+labels: ["type:engineering"]
 body:
-  - type: dropdown
-    id: subsystem
-    attributes:
-      label: Subsystem
-      options:
-        - Perception
-        - Ontology
-        - Reasoner
-        - Planner
-        - Explorer
-        - Orchestrator
-        - Eval
-    validations:
-      required: true
-
-  - type: dropdown
-    id: risk
-    attributes:
-      label: Risk level
-      options:
-        - Low
-        - Medium
-        - High
-    validations:
-      required: true
-
   - type: textarea
     id: description
     attributes:
@@ -48,4 +22,10 @@ body:
     id: depends
     attributes:
       label: Depends on
-      description: Other issues, or a spike outcome/ADR this is gated on.
+      description: Other issue numbers, or a spike outcome this is gated on.
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **After opening:** add one `subsystem:*` label and one `effort:*` label.
