@@ -1,0 +1,51 @@
+name: "🛠️ Engineering Task"
+description: "Well-understood work where 'done' can be specified up front."
+title: "[TASK] "
+labels: ["risk:engineering"]
+body:
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Subsystem
+      options:
+        - Perception
+        - Ontology
+        - Reasoner
+        - Planner
+        - Explorer
+        - Orchestrator
+        - Eval
+    validations:
+      required: true
+
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk level
+      options:
+        - Low
+        - Medium
+        - High
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: Concrete, checkable outcomes.
+    validations:
+      required: true
+
+  - type: textarea
+    id: depends
+    attributes:
+      label: Depends on
+      description: Other issues, or a spike outcome/ADR this is gated on.

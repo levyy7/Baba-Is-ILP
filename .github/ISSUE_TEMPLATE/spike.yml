@@ -1,0 +1,70 @@
+name: "🔬 Research Spike"
+description: "Timeboxed investigation whose output is knowledge/a decision, not production code."
+title: "[SPIKE] "
+labels: ["spike", "risk:research"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A spike is timeboxed and throwaway. It does NOT need to produce clean or reusable code.
+        Its job is to answer a question and reduce a specific risk.
+
+  - type: textarea
+    id: assumption
+    attributes:
+      label: Blocking assumption being tested
+      description: What do we currently believe/hope is true? What breaks if it's false?
+      placeholder: "e.g. Popper can induce rule-changing mechanics (X IS Y) within a tractable hypothesis space from <50 examples."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Subsystem
+      options:
+        - Perception
+        - Ontology
+        - Reasoner
+        - Planner
+        - Explorer
+        - Orchestrator
+        - Eval
+    validations:
+      required: true
+
+  - type: input
+    id: timebox
+    attributes:
+      label: Timebox
+      description: Hard stop for this spike (e.g. "2 days", "by Friday")
+    validations:
+      required: true
+
+  - type: textarea
+    id: method
+    attributes:
+      label: How will you test it?
+      description: The smallest, cheapest experiment that could falsify the assumption.
+    validations:
+      required: true
+
+  - type: textarea
+    id: success
+    attributes:
+      label: What does success / failure look like?
+      description: Be concrete enough that "did this spike succeed" isn't a judgment call later.
+    validations:
+      required: true
+
+  - type: textarea
+    id: fallback
+    attributes:
+      label: Fallback if this fails
+      description: What's the plan B for the architecture if the assumption is false?
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome (fill in when closing)
+      description: What was learned. Link to an ADR if this changes an architectural decision.
