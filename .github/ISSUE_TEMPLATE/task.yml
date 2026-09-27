@@ -13,19 +13,9 @@ body:
   - type: textarea
     id: done
     attributes:
-      label: Definition of done
+      label: Things to be done
       description: Concrete, checkable outcomes.
+      placeholder: "- []" 
     validations:
       required: true
 
-  - type: textarea
-    id: depends
-    attributes:
-      label: Depends on
-      description: Other issue numbers, or a spike outcome this is gated on.
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        **After opening:** add one `subsystem:*` label and one `effort:*` label.

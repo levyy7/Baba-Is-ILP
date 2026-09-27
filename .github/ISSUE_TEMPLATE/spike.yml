@@ -1,53 +1,33 @@
 name: "🔬 Research Spike"
-description: "Timeboxed investigation. Output is a decision or knowledge, not production code."
+description: "Investigation. Output is a decision or knowledge, not production code."
 title: "[SPIKE] "
 labels: ["type:research"]
 body:
   - type: textarea
-    id: assumption
+    id: description
     attributes:
-      label: Blocking assumption being tested
-      placeholder: "e.g. An ASP-based ILP system can induce initiatedAt/terminatedAt clauses for a property fluent from <50 traces."
-    validations:
-      required: true
-
-  - type: input
-    id: timebox
-    attributes:
-      label: Timebox
-      description: Hard stop (e.g. "2 days", "by Friday")
+      label: The thing to be investigated.
     validations:
       required: true
 
   - type: textarea
-    id: method
+    id: test
     attributes:
       label: How will you test it?
-      description: The smallest, cheapest experiment that could falsify the assumption.
+      description: The smallest, cheapest experiment that can help make a decision.
     validations:
       required: true
 
   - type: textarea
     id: success
     attributes:
-      label: Success / failure criteria
-      description: Concrete enough that it isn't a judgment call later.
+      label: Decision Criteria
+      description: What will be the output of the investigation and how will we decide it.
     validations:
       required: true
-
-  - type: textarea
-    id: fallback
-    attributes:
-      label: Fallback if this fails
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        **After opening:** add one `subsystem:*` label and one `risk:*` label (how much the architecture depends on this being true).
 
   - type: textarea
     id: outcome
     attributes:
       label: Outcome (fill in when closing)
-      description: What was learned. Link an ADR if this changes a decision.
+      description: What was learned.
